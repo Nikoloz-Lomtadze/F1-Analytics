@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>F1 Analytics Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<div class="container">
+
+  <h1>🏎️ F1 Analytics Dashboard</h1>
+
+  <!-- CARDS -->
+  <div class="cards">
+    <div class="card" onclick="openPanel('wins-circuit')">Wins by Circuit</div>
+    <div class="card" onclick="openPanel('slowest-pit')">Slowest Pit Stops</div>
+    <div class="card" onclick="openPanel('fastest-pit')">Fastest Pit Stops</div>
+    <div class="card" onclick="openPanel('fastest-lap')">Fastest Lap</div>
+    <div class="card" onclick="openPanel('most-wins')">Most Wins</div>
+  </div>
+
+  <!-- PANELS -->
+  <div class="panels-container">
+
+    <!-- WINS BY CIRCUIT -->
+    <div id="wins-circuit" class="panel">
+      <h2>Wins by Circuit</h2>
+      <select id="circuitSelect"></select>
+      <button onclick="loadWinsByCircuit()">Show chart</button>
+      <canvas id="winsCircuitChart"></canvas>
+    </div>
+
+    <!-- FASTEST LAP -->
+    <div id="fastest-lap" class="panel">
+      <h2>Fastest Lap</h2>
+      <select id="fastestLapCircuit"></select>
+      <input type="number" id="fastestLapStart" placeholder="Start year (optional)">
+      <input type="number" id="fastestLapEnd" placeholder="End year (optional)">
+      <button onclick="loadFastestLap()">Show chart</button>
+      <canvas id="fastestLapChart"></canvas>
+    </div>
+
+    <!-- FASTEST PIT -->
+    <div id="fastest-pit" class="panel">
+      <h2>Fastest Pit Stops</h2>
+      <select id="fastestPitCircuit"></select>
+      <input type="number" id="fastestPitStart" placeholder="Start year (optional)">
+      <input type="number" id="fastestPitEnd" placeholder="End year (optional)">
+      <button onclick="loadFastestPit()">Show chart</button>
+      <canvas id="fastestPitChart"></canvas>
+    </div>
+
+    <!-- SLOWEST PIT -->
+    <div id="slowest-pit" class="panel">
+      <h2>Slowest Pit Stops</h2>
+      <select id="slowestPitCircuit"></select>
+      <input type="number" id="slowestPitStart" placeholder="Start year (optional)">
+      <input type="number" id="slowestPitEnd" placeholder="End year (optional)">
+      <button onclick="loadSlowestPit()">Show chart</button>
+      <canvas id="slowestPitChart"></canvas>
+    </div>
+
+    <!-- MOST WINS -->
+    <div id="most-wins" class="panel">
+      <h2>Most Wins (Overall)</h2>
+      <button onclick="loadMostWins()">Show chart</button>
+      <canvas id="mostWinsChart"></canvas>
+    </div>
+
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

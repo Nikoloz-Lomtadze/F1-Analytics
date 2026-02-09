@@ -1,0 +1,161 @@
+/* BODY */
+body {
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(135deg, #1e1e1e, #111111);
+  color: #f0f0f0;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+/* HEADER */
+h1 {
+  font-size: 2.5em;
+  margin-bottom: 40px;
+  color: #FF0000;
+  text-shadow: 2px 2px 8px #000;
+}
+
+/* CARDS GRID */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+/* INDIVIDUAL CARD */
+.card {
+  background: linear-gradient(135deg, #BF0426, #FF0033);
+  border-radius: 15px;
+  padding: 50px 20px;
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #fff;
+  cursor: pointer;
+  position: relative;
+  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 8px 15px rgba(0,0,0,0.3);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 25px rgba(0,0,0,0.5);
+}
+
+/* PANEL CONTAINER */
+.panels-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  margin-bottom: 50px;
+}
+
+/* PANEL */
+.panel {
+  width: 90%;
+  max-width: 800px;
+  background: #222;
+  border-radius: 15px;
+  padding: 30px 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+  transform: translateY(-20px);
+  opacity: 0;
+  transition: all 0.4s ease-in-out;
+}
+
+.panel.show {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.panel.hidden {
+  display: none;
+}
+
+.panel h2 {
+  margin-top: 0;
+  color: #FF0000;
+}
+
+/* BUTTON */
+button {
+  background: #FF0033;
+  color: #fff;
+  border: none;
+  padding: 12px 25px;
+  margin-top: 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.4);
+}
+
+button:active {
+  transform: translateY(0);
+  box-shadow: 0 3px 6px rgba(0,0,0,0.4);
+}
+
+/* DROPDOWN */
+select {
+  padding: 10px 15px;
+  border-radius: 8px;
+  border: none;
+  font-size: 1em;
+  margin-top: 15px;
+  background: #333;
+  color: #fff;
+}
+
+/* CHART CANVAS */
+canvas {
+  margin-top: 25px;
+  max-width: 100%;
+}
+.panel {
+  display: none;      /* all panels hidden by default */
+}
+
+.panel.show {
+  display: block;     /* visible panel */
+}
+/* Common input style for start/end years */
+input[type="number"] {
+  width: 120px;
+  padding: 6px 10px;
+  margin: 5px 10px 5px 0;
+  border: 2px solid #FF0033; /* F1 red */
+  border-radius: 6px;
+  background-color: #1e1e1e; /* dark dashboard background */
+  color: #fff;
+  font-size: 14px;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+input[type="number"]::placeholder {
+  color: #aaa;
+}
+
+input[type="number"]:focus {
+  border-color: #ff5555;
+  box-shadow: 0 0 5px #ff5555;
+  background-color: #2a2a2a;
+}
